@@ -18,6 +18,5 @@
             </div>
             <button class="bg-blue-500 text-white py-1 px-4 cursor-pointer rounded mt-3">Login</button>
         </form>
-
     </div>
 @endsection

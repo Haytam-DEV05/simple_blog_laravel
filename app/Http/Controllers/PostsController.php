@@ -18,7 +18,7 @@ class PostsController extends Controller
             'title' => $request->title,
             'content' => $request->content_text,
             'category' => $request->category,
-            'created_by' => '',
+            'created_by' => auth()->user()->id,
         ]);
         return Redirect()->route('admin.posts');
 
@@ -28,9 +28,9 @@ class PostsController extends Controller
     public function del_post(Request $request)
     {
         $psot = new Post();
-        $psot->find($request->id)->delete() ;
+        $psot->find($request->id)->delete();
         return Redirect()->route('admin.posts');
-        
+
         // $post = Post::find($request->id);
         // $post->delete();
     }

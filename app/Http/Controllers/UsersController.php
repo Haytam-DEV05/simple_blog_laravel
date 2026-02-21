@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Redirect;
 
 class UsersController extends Controller
 {
@@ -37,8 +35,15 @@ class UsersController extends Controller
         } else {
             return Redirect()
                 ->route('login')
-                ->with('error' , 'Email or Password is note correct');
+                ->with('error', 'Email or Password is note correct');
         }
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return Redirect()
+            ->route('login');
     }
 }
 

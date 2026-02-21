@@ -18,4 +18,10 @@ class Post extends Model
     {
         return $this->belongsTo(Category::class, 'category');
     }
+
+    public function userData()
+    {
+        return $this->belongsTo(User::class, "created_by");
+    }
+
 }

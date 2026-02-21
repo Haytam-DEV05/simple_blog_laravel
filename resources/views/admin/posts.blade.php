@@ -49,6 +49,7 @@
                     <th>Title</th>
                     <th>Content</th>
                     <th>Category</th>
+                    <th>Created By</th>
                     <th>Created At</th>
                     <th>Delete</th>
                 </tr>
@@ -62,6 +63,7 @@
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->content }}</td>
                         <td>{{ $post->cattegoryData->name }}</td>
+                        <td>{{ $post->userData->name }}</td>
                         <td>{{ $post->created_at }}</td>
                         <td><a href="{{ url('/del_post') }}/{{ $post->id }}"
                                 class="bg-red-300 text-red-600 py-1 px-3 cursor-pointer my-1">Delete</a></td>

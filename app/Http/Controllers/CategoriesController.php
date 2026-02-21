@@ -11,7 +11,7 @@ class CategoriesController extends Controller
         $category = new Category();
         $category->create([
             'name' => $request->name,
-            'created_by' => '',
+            'created_by' => auth()->user()->id,
         ]);
         return redirect()->route('admin.index');
     }

@@ -10,4 +10,9 @@ class Category extends Model
         'name',
         'created_by'
     ];
+
+    public function userData()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
 }

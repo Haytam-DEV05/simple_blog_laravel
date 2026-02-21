@@ -29,7 +29,7 @@
                 @foreach ($categories as $categorie)
                     <tr class="text-center">
                         <td>{{ $categorie->name }}</td>
-                        <td>{{$categorie->created_by}}</td>
+                        <td>{{$categorie->userData->name}}</td>
                         <td>{{$categorie->created_at}}</td>
                         <td>
                             <a href="{{ url('/del_category') }}/{{ $categorie->id }}"
